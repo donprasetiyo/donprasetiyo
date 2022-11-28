@@ -343,7 +343,7 @@ const Header = () => {
         <header className="container" id="header">
             <div className="sub-container outer" id="offset">
                 <div className='logo'>
-                    <h1>Don Prasetiyo</h1>
+                    <h1><a href="/">Don Prasetiyo</a></h1>
                 </div>
                 <div className="nav-toggle">
                     <div className="nav">
@@ -363,6 +363,7 @@ const Header = () => {
                                 <li><a href="/">Home</a></li>
                                 <li><a href="#projects">Projects</a></li>
                                 <li><a href="#contact">Contact</a></li>
+                                <li><a href="#certification">Certifications</a></li>
                                 <li>
                                     <input type="checkbox" id="drop-1" />
                                     <a href="#">Apps

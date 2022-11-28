@@ -39,6 +39,7 @@
 --theme-switch-ul-brd: 1px solid #2a676e;
 --theme-switch-label-hover-bg: #317b83;
 --theme-switch-label-span-brd: 1px solid #727272;
+
 }
 
 [data-theme="dark"] {

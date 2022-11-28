@@ -381,7 +381,7 @@ const Content = () => {
                             </div>
                             <p className="description">
                                 It wouldn't be enough without talking about this website itself. DonPrasetiyo.com is a portfolio site
-                                that shows all of my personal projects, certifications, list of courses that are taken, and more. It's
+                                that shows all of my personal projects, certifications, and more. It's
                                 built primarily with React, and at this time, is a static site.</p>
                             <h3>Features</h3>
                             <p>
@@ -390,38 +390,34 @@ const Content = () => {
                             <ul>
                                 <li>
                                     Sticky navbar. You can try scrolling from top to the bottom and vice versa, and you will notice that
-                                    the navbar sticks to the top and becomes smaller when you scroll down, and goes back to normal when
+                                    the navbar sticks to the top and becomes smaller when you scroll down (on desktop), and goes back to normal when
                                     you scroll up.
                                 </li>
                                 <li>
-                                    Dark mode. Try clicking the dark mode toggle button on the navbar, and the appearance becomes dark
-                                    which is nice when visiting this site in the dark or at night.
+                                    Three different theme options. Try clicking the theme switch button on the navbar, and you choose between three
+                                     theme options: dark mode, light mode, and default. For example, when you select the dark mode, appearance becomes dark
+                                    which is nice when visiting this site in the dark or at night. 
+                                     The default follows your device settings (Windows, Mac, Android, and more). Selected theme will be saved in your
+                                      browser cookies, so you don't have to switch after every time you reload.
                                 </li>
-                                <li>
-                                    Sticky Table of content. Table of content is simply a box that shows the entire page's heading structure.
-                                    It's to have it as you scroll down to see a gimplse of the next section you'll read.
-                                    It's also good for SEO.
-                                </li>
-                                <li>
-                                    Sticky headings. It makes the current page's heading structure sticks at the top of the screen as
-                                    you scroll down. It is useful to see where you are currently on the page.
-                                </li>
-                                <li>
-                                    Sticky social share buttons. Social sharing is important part of a website. It lets users share the link
-                                    of the current page to social media, opened in a new window.
-                                </li>
-                                <li>
-                                    Sticky scroll-to-top button. Scroll-to-top button allows users to scroll the top by just clicking a
-                                    button. It is useful when you hit the very bottom of a page and you want to go back to the top
-                                    without scrolling.
-                                </li>
+                                
                                 <li>
                                     Responsive on mobile, tablet, and desktop. I use some flexboxes to make the website easier to read
                                     on smaller screens, but I also have added some media queries and others to help improve the appearance
                                     when it is visited on the smartphone.
                                 </li>
+                                 <li>
+                                    Tooltip with dismiss button. When you visit this site and a theme hasn't been selected yet, you will see a tooltip.
+                                    After a theme is selected, configuration is saved on your browser cookies and and this tooltip won't show. If you clear your
+                                    cache, the tooltip will pop up again after you reload.
+                                </li>
+                                <li>Scroll to element with anchor. When you click the Project menu on the navbar, it will automatically scroll to my 
+                                    personal project list, with smooth-scrolling. The same thing will happen when you click the Contact menu.
+
+                                </li>
                             </ul>
-                            <a className='src-btn' href="http://" target="_blank" rel="noopener noreferrer">
+                            <p>More features will come soon.</p>
+                            <a className='src-btn' href="https://github.com/donprasetiyo/donprasetiyo" target="_blank" rel="noopener noreferrer">
                                 See the source code on Github
                                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
@@ -431,7 +427,7 @@ const Content = () => {
             </div>
             <div className="panel container">
                 <div className="sub-container up center single">
-                    <h2>Certifications:</h2>
+                    <h2 id="certification">Certifications:</h2>
                     <div>
                         <ul className='cert-list'>
                             <li>
