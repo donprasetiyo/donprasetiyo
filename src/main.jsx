@@ -10,4 +10,3 @@ import './index.css'
   
   <App />
 )
-

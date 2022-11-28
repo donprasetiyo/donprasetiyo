@@ -117,8 +117,20 @@ const Header = () => {
                 }, 2000);
             })
 
+
+
             window.onload = function () {
-                setTimeout(loadAfterTime, 5000)
+                function scrollToHash(hash) {
+                    let scrollToDiv = document.querySelector(hash);
+                    if (scrollToDiv) {
+                        scrollToDiv.scrollIntoView(true);
+                    }
+                }
+                if (location.hash.length > 0) {
+                    scrollToHash(location.hash);
+                }
+                setTimeout(loadAfterTime, 5000);
+
             };
             function loadAfterTime() {
                 tooltipBox.style.opacity = 1;
@@ -193,46 +205,6 @@ const Header = () => {
                 //add css variable
                 loadCustomThemeCSS();
                 changeThemeIcon("fa-moon");
-                // document.documentElement.style.setProperty('--white', ' #fafafa');
-                // document.documentElement.style.setProperty('--link-color', ' #6487ae');
-                // document.documentElement.style.setProperty('--header-bg', ' #2d7179');
-                // document.documentElement.style.setProperty('--header-cl', ' #fafafa');
-                // document.documentElement.style.setProperty('--nav-link', ' #fafafa');
-                // document.documentElement.style.setProperty('--nav-ul-bg', ' #2d7179');
-                // document.documentElement.style.setProperty('--nav-ul-bdr', ' #1d4f55');
-                // document.documentElement.style.setProperty('--content-bg', ' #1B3E41');
-                // document.documentElement.style.setProperty('--footer-bg', ' #555');
-                // document.documentElement.style.setProperty('--panel-bg', ' #1B3E41');
-                // document.documentElement.style.setProperty('--panel-even-bg', ' #1F4648');
-                // document.documentElement.style.setProperty('--social-a', ' #fafafa');
-                // document.documentElement.style.setProperty('--social-a-hover', ' #2d7179');
-                // document.documentElement.style.setProperty('--social-border', ' #fafafa');
-                // document.documentElement.style.setProperty('--toggle-bg', ' #1B3E41');
-                // document.documentElement.style.setProperty('--toggle-color', ' #fafafa');
-                // document.documentElement.style.setProperty('--theme-toggle-input-checked-and-toggle-bg', ' #2e7178');
-                // document.documentElement.style.setProperty('--theme-toggle-input-checked-and-toggle-cr', ' #fafafa');
-                // document.documentElement.style.setProperty('--theme-toggle-input-focus-and-toggle-bx-shdw', ' #2e7178');
-                // document.documentElement.style.setProperty('--listing-title-h2-border-btm', ' 1px dashed #fafafa');
-                // document.documentElement.style.setProperty('--panel-listing-two-single-bg', ' #204848');
-                // document.documentElement.style.setProperty('--panel-listing-two-single-bdr', ' 1px dashed #fafafa');
-                // document.documentElement.style.setProperty('--right-a', ' #90B2D5');
-                // document.documentElement.style.setProperty('--made-width-bg', ' #1B3E41');
-                // document.documentElement.style.setProperty('--made-width-bdr', ' 1px dashed #fafafa');
-                // document.documentElement.style.setProperty('--src-btn-bg', ' #cfe9ea');
-                // document.documentElement.style.setProperty('--src-btn-cr', ' #555 !important');
-                // document.documentElement.style.setProperty('--a-src-btn-hover', ' #a4dada');
-                // document.documentElement.style.setProperty('--certification-bg', ' #1B3E41');
-                // document.documentElement.style.setProperty('--cert-left-img-bdr', ' 1px dashed #fafafa');
-                // document.documentElement.style.setProperty('--cert-a', ' #fafafa');
-                // document.documentElement.style.setProperty('--cert-a-hover-certification-bg', ' #2d7179');
-                // document.documentElement.style.setProperty('--cert-a-hover-certification-after-bg', ' #1f4648');
-                // document.documentElement.style.setProperty('--theme-switch-summary-bg-color', ' #2D7179');
-                // document.documentElement.style.setProperty('--theme-switch-summary-bg-brd', ' 1px solid #1d4f55');
-                // document.documentElement.style.setProperty('--theme-switch-ul-bg', ' #2D7179');
-                // document.documentElement.style.setProperty('--theme-switch-ul-brd', ' 1px solid #1d4f55');
-                // document.documentElement.style.setProperty('--theme-switch-label-hover-bg', ' #286269');
-                // document.documentElement.style.setProperty('--theme-switch-label-span-brd', ' 1px solid #727272');
-
                 ///
                 break;
             case "light":
@@ -242,47 +214,6 @@ const Header = () => {
 
                 loadCustomThemeCSS();
                 changeThemeIcon("fa-sun");
-                // document.documentElement.style.setProperty('color-scheme', 'light');
-                // document.documentElement.style.setProperty('--white', ' #555');
-                // document.documentElement.style.setProperty('--link-color', ' #0D4C92');
-                // document.documentElement.style.setProperty('--header-bg', ' #3A8891');
-                // document.documentElement.style.setProperty('--header-cl', ' #fafafa');
-                // document.documentElement.style.setProperty('--nav-link', ' #fafafa');
-                // document.documentElement.style.setProperty('--nav-ul-bg', ' #3A8891');
-                // document.documentElement.style.setProperty('--nav-ul-bdr', ' 1px solid #2a676e');
-                // document.documentElement.style.setProperty('--content-bg', ' #cfe9ea');
-                // document.documentElement.style.setProperty('--footer-bg', ' #aaa');
-                // document.documentElement.style.setProperty('--panel-bg', ' #cfe9eb');
-                // document.documentElement.style.setProperty('--panel-even-bg', ' #c3e4e5');
-                // document.documentElement.style.setProperty('--social-a', ' #444');
-                // document.documentElement.style.setProperty('--social-a-hover', ' #3a8891');
-                // document.documentElement.style.setProperty('--social-border', ' 1px dashed #444');
-                // document.documentElement.style.setProperty('--toggle-bg', ' #cfe9ea');
-                // document.documentElement.style.setProperty('--toggle-color', ' #706d6d');
-                // document.documentElement.style.setProperty('--theme-toggle-input-checked-and-toggle-bg', ' #2e7178');
-                // document.documentElement.style.setProperty('--theme-toggle-input-checked-and-toggle-cr', ' #fafafa');
-                // document.documentElement.style.setProperty('--theme-toggle-input-focus-and-toggle-bx-shdw', ' 0 0 1px #2e7178');
-                // document.documentElement.style.setProperty('--listing-title-h2-border-btm', ' 1px dashed #555');
-                // document.documentElement.style.setProperty('--panel-listing-two-single-bg', ' #c2e4e4');
-                // document.documentElement.style.setProperty('--panel-listing-two-single-bdr', ' 1px dashed #555');
-                // document.documentElement.style.setProperty('--right-a', ' #2f4b7c');
-                // document.documentElement.style.setProperty('--made-width-bg', ' #cfe9ea');
-                // document.documentElement.style.setProperty('--made-width-bdr', ' 1px dashed #555');
-                // document.documentElement.style.setProperty('--src-btn-bg', ' #cfe9ea');
-                // document.documentElement.style.setProperty('--src-btn-cr', ' #555 !important');
-                // document.documentElement.style.setProperty('--a-src-btn-hover', ' #a4dada');
-                // document.documentElement.style.setProperty('--certification-bg', ' #cfe9ea');
-                // document.documentElement.style.setProperty('--cert-left-img-bdr', ' 1px dashed #555');
-                // document.documentElement.style.setProperty('--cert-a', ' #555');
-                // document.documentElement.style.setProperty('--cert-a-hover-certification-bg', ' #a4dada');
-                // document.documentElement.style.setProperty('--cert-a-hover-certification-after-bg', ' #c2e4e4');
-                // document.documentElement.style.setProperty('--theme-switch-summary-bg-color', ' transparent');
-                // document.documentElement.style.setProperty('--theme-switch-summary-bg-brd', ' 1px solid #1d4f55');
-                // document.documentElement.style.setProperty('--theme-switch-ul-bg', ' #3A8891');
-                // document.documentElement.style.setProperty('--theme-switch-ul-brd', ' 1px solid #2a676e');
-                // document.documentElement.style.setProperty('--theme-switch-label-hover-bg', ' #317b83');
-                // document.documentElement.style.setProperty('--theme-switch-label-span-brd', ' 1px solid #727272');
-
                 break;
             case "system":
                 // code
@@ -309,20 +240,6 @@ const Header = () => {
 
     }
 
-    useEffect(() => {
-        window.onload = function () {
-            function scrollToHash(hash) {
-                let scrollToDiv = document.querySelector(hash);
-                if (scrollToDiv) {
-                    scrollToDiv.scrollIntoView(true);
-                }
-            }
-            if (location.hash.length > 0) {
-                scrollToHash(location.hash);
-            }
-        }
-
-    })
 
     function hideTooltip() {
         let themeSwitchToolTip = document.querySelector(".theme-switch > .tooltip");
