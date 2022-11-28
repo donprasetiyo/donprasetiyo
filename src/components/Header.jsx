@@ -120,6 +120,11 @@ const Header = () => {
 
 
             window.onload = function () {
+
+                setTimeout(() => {
+                    tooltipBox.style.opacity = 1;
+                }, 5000);
+
                 function scrollToHash(hash) {
                     let scrollToDiv = document.querySelector(hash);
                     if (scrollToDiv) {
@@ -129,12 +134,13 @@ const Header = () => {
                 if (location.hash.length > 0) {
                     scrollToHash(location.hash);
                 }
-                setTimeout(loadAfterTime, 5000);
+                //setTimeout(loadAfterTime, 5000);
+                
 
             };
-            function loadAfterTime() {
-                tooltipBox.style.opacity = 1;
-            }
+            // function loadAfterTime() {
+            //     tooltipBox.style.opacity = 1;
+            // }
         })
     }
 
