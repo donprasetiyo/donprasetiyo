@@ -118,32 +118,32 @@ const Header = () => {
             })
 
 
+            onLoadActivities();
 
-            window.onload = function () {
 
-                setTimeout(() => {
-                    tooltipBox.style.opacity = 1;
-                }, 5000);
-
-                function scrollToHash(hash) {
-                    let scrollToDiv = document.querySelector(hash);
-                    if (scrollToDiv) {
-                        scrollToDiv.scrollIntoView(true);
-                    }
-                }
-                if (location.hash.length > 0) {
-                    scrollToHash(location.hash);
-                }
-                //setTimeout(loadAfterTime, 5000);
-                
-
-            };
             // function loadAfterTime() {
             //     tooltipBox.style.opacity = 1;
             // }
         })
     }
 
+    function onLoadActivities() {
+        let themeSwitchToolTip = document.querySelector(".theme-switch > .tooltip");
+        setTimeout(() => {
+            themeSwitchToolTip.style.opacity = 1;
+        }, 5000);
+        function scrollToHash(hash) {
+            let scrollToDiv = document.querySelector(hash);
+            if (scrollToDiv) {
+                scrollToDiv.scrollIntoView(true);
+            }
+        }
+        if (location.hash.length > 0) {
+            scrollToHash(location.hash);
+        }
+        //setTimeout(loadAfterTime, 5000);
+
+    }
 
     let lastScrollTop = 0;
 
