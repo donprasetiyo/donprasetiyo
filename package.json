@@ -1,15 +1,17 @@
 {
   "name": "donprasetiyo",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --host"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@lottiefiles/react-lottie-player": "^3.4.9",
+    "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

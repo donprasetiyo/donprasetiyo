@@ -6,8 +6,6 @@ import { type, type as loop } from '../utils/typical'
 const Content = () => {
 
 
- 
-
     useEffect(() => {
         //STUFF THAT YOU WANT TO RUN EVERY TIME THE PAGE RE-RENDERS.
         //TO RUN ONLY WHEN A SPECIFIC RENDER OCCURS, ADD DEPENDENCIES INSIDE [] AT THE BOTTOM.
@@ -20,11 +18,29 @@ const Content = () => {
         //THIS FUNCTION DOESN'T TRIGGER RE-RENDER. ONLY RUNS ONCE, AND TYPICAL.JS TAKES CARE OF THE LOOP
         type(x, ...steps, loop);
 
-        
-    })
 
+    }, [])
 
-
+    function growDiv(e) {
+    //reusable collapsible
+    //to use it, simply add the function to the onClick event handler
+    //it then detects sibling element, and that sibling's first children
+    
+        let expandButton = e.target;
+        var growDiv = expandButton.nextElementSibling;
+        if (growDiv.clientHeight) {
+            growDiv.style.height = 0;
+            if (expandButton.classList.contains('opened')) {
+            expandButton.classList.remove('opened');
+            }
+        } else {
+            if (!expandButton.classList.contains('opened')){
+            expandButton.classList.add('opened');
+            }
+            var wrapper = expandButton.nextElementSibling.children[0];
+            growDiv.style.height = wrapper.clientHeight + "px";
+        }
+    }
 
     return (
         <div id="content">
@@ -99,10 +115,35 @@ const Content = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className='src-btn' style={{margin:"25px 0 30px"}} href="https://github.com/donprasetiyo/donprasetiyo" target="_blank" rel="noopener noreferrer">
-                                See the source code on Github
-                                <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
+                    <a className='src-btn' style={{ margin: "25px 0 30px" }} href="https://github.com/donprasetiyo/donprasetiyo" target="_blank" rel="noopener noreferrer">
+                        See the source code on Github
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <div className="changelog">
+                        <button onClick={(e) => growDiv(e)}>See Changelog <i className="fa-solid fa-caret-down"></i></button>
+                        <div className="wrapper">
+                            <div className="expand">
+                            <h2 id="version-1-1">Version 1.1.0</h2>
+                            <p className="released-on">Released on: 6/12/2022</p>
+                            <p>There are some changes in V1.1.0:</p>
+                            <h3 id="codes-refactored-">Codes refactored:</h3>
+                            <ul>
+                                <li>Some features, such as theme options, previously rely on plain Javascript. Now they&#39;re fully React, relying on state changes and involving React useContext hook to apply theme (see ThemeContext.jsx).</li>
+                                <li>Select theme now rely on CSS class added to the App component to apply. It now adds &quot;.dark&quot; when user selects dark theme, &quot;.light&quot; for light, &quot;.system&quot; for device settings. It adds &quot; &quot; when user hasn&#39;t selected any. This is possible thanks to useContext hook. Previously, I used CSS variables with attribute selectors (example: [data-theme=&quot;dark&quot;]).</li>
+                                <li>Fixing re-render on some useEffect hooks.</li>
+                            </ul>
+                            <h3 id="features-interface-changes-">Features/interface changes:</h3>
+                            <ul>
+                                <li>Adding contact form with EmailJS and reCAPTCHA. Email service ID and other sensitive info are stored on .ENV file.</li>
+                                <li>Adding reusable changelog collapsible.</li>
+                                <li>Theme menu now shows with CSS&#39;s clip: rect() transition. Previously, this wasn&#39;t possible due to the details element usage (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details</a>), and applying transition to it isn&#39;t possible.</li>
+                                <li>Adding hover transition to navigation links drop-down menu.</li>
+                                <li>Fixing link color on footer on dark theme.</li>
+                                <li>&quot;Device settings&quot; instead of &quot;Default&quot; on theme options menu.</li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="panel container" id="projects">
@@ -298,7 +339,7 @@ const Content = () => {
                             <p className="description">
                                 This is a Flappy Bird clone made using plain Javascript using ViteJS. It is playable on your browser
                                 and can be played on PC by using Up Arrow key to jump and Space to restart the game. It is also playable on
-                                 mobile device, and you can tap the screen to jump.</p>
+                                mobile device, and you can tap the screen to jump.</p>
                             <h3>How it works</h3>
                             <p>
                                 User visit the flappy.donprasetiyo.com on their browser. They will see a welcome screen, which pauses
@@ -383,6 +424,31 @@ const Content = () => {
                                         </li>
                                     </ul>
                                 </div>
+                                <div className="changelog">
+                        <button onClick={(e) => growDiv(e)}>See Changelog <i className="fa-solid fa-caret-down"></i></button>
+                        <div className="wrapper">
+                            <div className="expand">
+                            <h2 id="version-1-1">Version 1.1.0</h2>
+                            <p className="released-on">Released on: 6/12/2022</p>
+                            <p>There are some changes in V1.1.0:</p>
+                            <h3 id="codes-refactored-">Codes refactored:</h3>
+                            <ul>
+                                <li>Some features, such as theme options, previously rely on plain Javascript. Now they&#39;re fully React, relying on state changes and involving React useContext hook to apply theme (see ThemeContext.jsx).</li>
+                                <li>Select theme now rely on CSS class added to the App component to apply. It now adds &quot;.dark&quot; when user selects dark theme, &quot;.light&quot; for light, &quot;.system&quot; for device settings. It adds &quot; &quot; when user hasn&#39;t selected any. This is possible thanks to useContext hook. Previously, I used CSS variables with attribute selectors (example: [data-theme=&quot;dark&quot;]).</li>
+                                <li>Fixing re-render on some useEffect hooks.</li>
+                            </ul>
+                            <h3 id="features-interface-changes-">Features/interface changes:</h3>
+                            <ul>
+                                <li>Adding contact form with EmailJS and reCAPTCHA. Email service ID and other sensitive info are stored on .ENV file.</li>
+                                <li>Adding reusable changelog collapsible.</li>
+                                <li>Theme menu now shows with CSS&#39;s clip: rect() transition. Previously, this wasn&#39;t possible due to the details element usage (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details</a>), and applying transition to it isn&#39;t possible.</li>
+                                <li>Adding hover transition to navigation links drop-down menu.</li>
+                                <li>Fixing link color on footer on dark theme.</li>
+                                <li>&quot;Device settings&quot; instead of &quot;Default&quot; on theme options menu.</li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
                             </div>
                             <p className="description">
                                 It wouldn't be enough without talking about this website itself. DonPrasetiyo.com is a portfolio site
@@ -399,26 +465,30 @@ const Content = () => {
                                     you scroll up.
                                 </li>
                                 <li>
-                                   <strong>Three different theme options</strong>. Try clicking the theme switch button on the navbar, and you can choose between three
-                                     theme options: dark mode, light mode, and default. For example, when you select the dark mode, appearance becomes dark
-                                    which is nice when visiting this site in the dark or at night. 
-                                     The default follows your device settings (Windows, Mac, Android, and more). Selected theme will be saved in your
-                                      browser cookies, so you don't have to switch after every time you reload.
+                                    <strong>Three different theme options</strong>. Try clicking the theme switch button on the navbar, and you can choose between three
+                                    theme options: dark mode, light mode, and device settings. For example, when you select the dark mode, appearance becomes dark
+                                    which is nice when visiting this site in the dark or at night.
+                                    The device settings follows your device settings (Windows, Mac, Android, and more). Selected theme will be saved in your
+                                    browser cookies, so you don't have to switch after every time you reload.
                                 </li>
-                                
+
                                 <li>
                                     <strong>Responsive on mobile, tablet, and desktop</strong>. I use some flexboxes to make the website easier to read
                                     on smaller screens, but I also have added some media queries and others to help improve the appearance
-                                    when it is visited on the smartphone.
+                                    when it is visited on the smartphone. I also made the reCAPTCHA responsive.
                                 </li>
-                                 <li>
+                                <li>
                                     <strong>Tooltip with dismiss button</strong>. When you visit this site and a theme hasn't been selected yet, you will see a tooltip.
                                     After a theme is selected, configuration is saved on your browser cookies and this tooltip won't show. If you clear your
                                     cookies, the tooltip will pop up again after you reload.
                                 </li>
-                                <li><strong>Scroll to element with anchor</strong>. When you click the Project menu on the navbar, it will automatically scroll to my 
+                                <li><strong>Scroll to element with anchor</strong>. When you click the Project menu on the navbar, it will automatically scroll to my
                                     personal project list, with smooth-scrolling. The same thing will happen when you click the Contact menu.
 
+                                </li>
+                                <li><strong>Reusable collapsible for changelog</strong>. This feature is reusable by simply copying its React component. The same function triggers 
+                                height changes to expand.</li>
+                                <li><strong>Contact form with EmailJS and reCAPTCHA</strong>. It's responsive, and email would send directly to my email. Email service ID and other sensitive info are stored on .ENV file.
                                 </li>
                             </ul>
                             <p>More features will come soon.</p>
@@ -457,36 +527,7 @@ const Content = () => {
                     </div>
                 </div>
             </div>
-           <footer id="contact">
-            <div className="footer">
-                <h2>Contact:</h2>
-                <div className='social'>
-                        <ul>
-                            <li>
-                                <a href="mailto:dprasetiyo6@gmail.com" target="_blank" rel="noopener noreferrer">
-                                    <i className="fa-solid fa-envelope"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/donprasetiyo/" target="_blank" rel="noopener noreferrer">
-                                    <i className="fa-brands fa-github"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/donprasetiyo/" target="_blank" rel="noopener noreferrer">
 
-                                    <i className="fa-brands fa-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/donprasetiyo" target="_blank" rel="noopener noreferrer">
-                                    <i className="fa-brands fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
-           </footer>
         </div>
     );
 }
