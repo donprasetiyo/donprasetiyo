@@ -56,7 +56,6 @@ function ThemeContextProvider({ children }) {
             if (selectedThemeCookie !== chosenTheme) {
                 setChosenTheme(selectedThemeCookie)
             }
-            console.log('cookie is not null')
         }
 
         else {
@@ -91,11 +90,10 @@ function ThemeContextProvider({ children }) {
             if (selectedThemeCookie !== chosenTheme) {
                 setChosenTheme(selectedThemeCookie)
             }
-            if (selectedThemeCookie === undefined){
+            if (selectedThemeCookie === undefined) {
                 setChosenTheme('');
             }
 
-            console.log('cookie is null')
         }
     }
 
@@ -162,10 +160,9 @@ function ThemeContextProvider({ children }) {
                 changeThemeIcon("fa-palette");
         }
 
-        console.log('updateTheme is triggered')
 
-        if (selectedTheme !== chosenTheme){
-         setChosenTheme(selectedTheme);
+        if (selectedTheme !== chosenTheme) {
+            setChosenTheme(selectedTheme);
         }
 
         document.cookie = `theme=${selectedTheme}; SameSite=None; Secure`;

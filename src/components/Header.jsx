@@ -51,8 +51,6 @@ const Header = () => {
         }
     },);
 
-
-
     function hideTooltip() {
         let themeSwitchToolTip = document.querySelector(".theme-options > .tooltip");
         if (themeSwitchToolTip) {
@@ -71,7 +69,7 @@ const Header = () => {
 
     function openMenu() {
         setIsOpen(prevCheck => !prevCheck);
-       hideTooltip();
+        hideTooltip();
     }
 
 
@@ -80,9 +78,7 @@ const Header = () => {
     const themeChangeTriggered = (e) => {
         updateTheme(e);
         setIsOpen(prevIsOpen => !prevIsOpen)
-        console.log('themeChanged')
     }
-
 
     return (
         <header className="container" id="header">

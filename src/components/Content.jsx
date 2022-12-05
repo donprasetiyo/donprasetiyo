@@ -5,7 +5,6 @@ import { type, type as loop } from '../utils/typical'
 
 const Content = () => {
 
-
     useEffect(() => {
         //STUFF THAT YOU WANT TO RUN EVERY TIME THE PAGE RE-RENDERS.
         //TO RUN ONLY WHEN A SPECIFIC RENDER OCCURS, ADD DEPENDENCIES INSIDE [] AT THE BOTTOM.
@@ -22,20 +21,20 @@ const Content = () => {
     }, [])
 
     function growDiv(e) {
-    //reusable collapsible
-    //to use it, simply add the function to the onClick event handler
-    //it then detects sibling element, and that sibling's first children
-    
+        //reusable collapsible
+        //to use it, simply add the function to the onClick event handler
+        //it then detects sibling element, and that sibling's first children
+
         let expandButton = e.target;
         var growDiv = expandButton.nextElementSibling;
         if (growDiv.clientHeight) {
             growDiv.style.height = 0;
             if (expandButton.classList.contains('opened')) {
-            expandButton.classList.remove('opened');
+                expandButton.classList.remove('opened');
             }
         } else {
-            if (!expandButton.classList.contains('opened')){
-            expandButton.classList.add('opened');
+            if (!expandButton.classList.contains('opened')) {
+                expandButton.classList.add('opened');
             }
             var wrapper = expandButton.nextElementSibling.children[0];
             growDiv.style.height = wrapper.clientHeight + "px";
@@ -123,25 +122,25 @@ const Content = () => {
                         <button onClick={(e) => growDiv(e)}>See Changelog <i className="fa-solid fa-caret-down"></i></button>
                         <div className="wrapper">
                             <div className="expand">
-                            <h2 id="version-1-1">Version 1.1.0</h2>
-                            <p className="released-on">Released on: 6/12/2022</p>
-                            <p>There are some changes in V1.1.0:</p>
-                            <h3 id="codes-refactored-">Codes refactored:</h3>
-                            <ul>
-                                <li>Some features, such as theme options, previously rely on plain Javascript. Now they&#39;re fully React, relying on state changes and involving React useContext hook to apply theme (see ThemeContext.jsx).</li>
-                                <li>Select theme now rely on CSS class added to the App component to apply. It now adds &quot;.dark&quot; when user selects dark theme, &quot;.light&quot; for light, &quot;.system&quot; for device settings. It adds &quot; &quot; when user hasn&#39;t selected any. This is possible thanks to useContext hook. Previously, I used CSS variables with attribute selectors (example: [data-theme=&quot;dark&quot;]).</li>
-                                <li>Fixing re-render on some useEffect hooks.</li>
-                            </ul>
-                            <h3 id="features-interface-changes-">Features/interface changes:</h3>
-                            <ul>
-                                <li>Adding contact form with EmailJS and reCAPTCHA. Email service ID and other sensitive info are stored on .ENV file.</li>
-                                <li>Adding reusable changelog collapsible.</li>
-                                <li>Theme menu now shows with CSS&#39;s clip: rect() transition. Previously, this wasn&#39;t possible due to the details element usage (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details</a>), and applying transition to it isn&#39;t possible.</li>
-                                <li>Adding hover transition to navigation links drop-down menu.</li>
-                                <li>Fixing link color on footer on dark theme.</li>
-                                <li>&quot;Device settings&quot; instead of &quot;Default&quot; on theme options menu.</li>
-                            </ul>
-                        </div>
+                                <h2 id="version-1-1">Version 1.1.0</h2>
+                                <p className="released-on">Released on: 6/12/2022</p>
+                                <p>There are some changes in V1.1.0:</p>
+                                <h3 id="codes-refactored-">Codes refactored:</h3>
+                                <ul>
+                                    <li>Some features, such as theme options, previously rely on plain Javascript. Now they&#39;re fully React, relying on state changes and involving React useContext hook to apply theme (see ThemeContext.jsx).</li>
+                                    <li>Select theme now rely on CSS class added to the App component to apply. It now adds &quot;.dark&quot; when user selects dark theme, &quot;.light&quot; for light, &quot;.system&quot; for device settings. It adds &quot; &quot; when user hasn&#39;t selected any. This is possible thanks to useContext hook. Previously, I used CSS variables with attribute selectors (example: [data-theme=&quot;dark&quot;]).</li>
+                                    <li>Fixing re-render on some useEffect hooks.</li>
+                                </ul>
+                                <h3 id="features-interface-changes-">Features/interface changes:</h3>
+                                <ul>
+                                    <li>Adding contact form with EmailJS and reCAPTCHA. Email service ID and other sensitive info are stored on .ENV file.</li>
+                                    <li>Adding reusable changelog collapsible.</li>
+                                    <li>Theme menu now shows with CSS&#39;s clip: rect() transition. Previously, this wasn&#39;t possible due to the details element usage (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details</a>), and applying transition to it isn&#39;t possible.</li>
+                                    <li>Adding hover transition to navigation links drop-down menu.</li>
+                                    <li>Fixing link color on footer on dark theme.</li>
+                                    <li>&quot;Device settings&quot; instead of &quot;Default&quot; on theme options menu.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -425,30 +424,30 @@ const Content = () => {
                                     </ul>
                                 </div>
                                 <div className="changelog">
-                        <button onClick={(e) => growDiv(e)}>See Changelog <i className="fa-solid fa-caret-down"></i></button>
-                        <div className="wrapper">
-                            <div className="expand">
-                            <h2 id="version-1-1">Version 1.1.0</h2>
-                            <p className="released-on">Released on: 6/12/2022</p>
-                            <p>There are some changes in V1.1.0:</p>
-                            <h3 id="codes-refactored-">Codes refactored:</h3>
-                            <ul>
-                                <li>Some features, such as theme options, previously rely on plain Javascript. Now they&#39;re fully React, relying on state changes and involving React useContext hook to apply theme (see ThemeContext.jsx).</li>
-                                <li>Select theme now rely on CSS class added to the App component to apply. It now adds &quot;.dark&quot; when user selects dark theme, &quot;.light&quot; for light, &quot;.system&quot; for device settings. It adds &quot; &quot; when user hasn&#39;t selected any. This is possible thanks to useContext hook. Previously, I used CSS variables with attribute selectors (example: [data-theme=&quot;dark&quot;]).</li>
-                                <li>Fixing re-render on some useEffect hooks.</li>
-                            </ul>
-                            <h3 id="features-interface-changes-">Features/interface changes:</h3>
-                            <ul>
-                                <li>Adding contact form with EmailJS and reCAPTCHA. Email service ID and other sensitive info are stored on .ENV file.</li>
-                                <li>Adding reusable changelog collapsible.</li>
-                                <li>Theme menu now shows with CSS&#39;s clip: rect() transition. Previously, this wasn&#39;t possible due to the details element usage (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details</a>), and applying transition to it isn&#39;t possible.</li>
-                                <li>Adding hover transition to navigation links drop-down menu.</li>
-                                <li>Fixing link color on footer on dark theme.</li>
-                                <li>&quot;Device settings&quot; instead of &quot;Default&quot; on theme options menu.</li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
+                                    <button onClick={(e) => growDiv(e)}>See Changelog <i className="fa-solid fa-caret-down"></i></button>
+                                    <div className="wrapper">
+                                        <div className="expand">
+                                            <h2 id="version-1-1">Version 1.1.0</h2>
+                                            <p className="released-on">Released on: 6/12/2022</p>
+                                            <p>There are some changes in V1.1.0:</p>
+                                            <h3 id="codes-refactored-">Codes refactored:</h3>
+                                            <ul>
+                                                <li>Some features, such as theme options, previously rely on plain Javascript. Now they&#39;re fully React, relying on state changes and involving React useContext hook to apply theme (see ThemeContext.jsx).</li>
+                                                <li>Select theme now rely on CSS class added to the App component to apply. It now adds &quot;.dark&quot; when user selects dark theme, &quot;.light&quot; for light, &quot;.system&quot; for device settings. It adds &quot; &quot; when user hasn&#39;t selected any. This is possible thanks to useContext hook. Previously, I used CSS variables with attribute selectors (example: [data-theme=&quot;dark&quot;]).</li>
+                                                <li>Fixing re-render on some useEffect hooks.</li>
+                                            </ul>
+                                            <h3 id="features-interface-changes-">Features/interface changes:</h3>
+                                            <ul>
+                                                <li>Adding contact form with EmailJS and reCAPTCHA. Email service ID and other sensitive info are stored on .ENV file.</li>
+                                                <li>Adding reusable changelog collapsible.</li>
+                                                <li>Theme menu now shows with CSS&#39;s clip: rect() transition. Previously, this wasn&#39;t possible due to the details element usage (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details</a>), and applying transition to it isn&#39;t possible.</li>
+                                                <li>Adding hover transition to navigation links drop-down menu.</li>
+                                                <li>Fixing link color on footer on dark theme.</li>
+                                                <li>&quot;Device settings&quot; instead of &quot;Default&quot; on theme options menu.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <p className="description">
                                 It wouldn't be enough without talking about this website itself. DonPrasetiyo.com is a portfolio site
@@ -486,8 +485,8 @@ const Content = () => {
                                     personal project list, with smooth-scrolling. The same thing will happen when you click the Contact menu.
 
                                 </li>
-                                <li><strong>Reusable collapsible for changelog</strong>. This feature is reusable by simply copying its React component. The same function triggers 
-                                height changes to expand.</li>
+                                <li><strong>Reusable collapsible for changelog</strong>. This feature is reusable by simply copying its React component. The same function triggers
+                                    height changes to expand.</li>
                                 <li><strong>Contact form with EmailJS and reCAPTCHA</strong>. It's responsive, and email would send directly to my email. Email service ID and other sensitive info are stored on .ENV file.
                                 </li>
                             </ul>

@@ -375,6 +375,12 @@ color: #fafafa;
     box-shadow: 0 0 1px #2e7178;
   }
 
+
+  .theme-options > ul {
+  background: #3a8891;
+    border: 1px solid #1d4f55;
+ }
+
   .listing-title h2 {
     border-bottom: 1px dashed #555;
   }
@@ -503,7 +509,6 @@ color: #fafafa;
 
   nav ul li ul {
     background: #2d7179;
-    ;
     border: 1px solid #1d4f55;
   }
 
@@ -1409,6 +1414,10 @@ display: block;
 
 .theme-options ul i {
   margin-right:5px
+}
+
+.dark h2, .dark h3, .dark p, .dark ul li {
+  color: #fafafa;
 }
 
 #main-theme-icon{
