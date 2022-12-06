@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  
+  <script async defer src="https://www.google.com/recaptcha/api.js"></script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -12,15 +14,36 @@
   <script src="https://kit.fontawesome.com/84d2741daf.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
   </script>
-   <script src="https://www.google.com/recaptcha/api.js"
-        async defer></script>
-        <script>
-          function recaptchaCallback() {
-            
-  document.getElementById("email-submit").removeAttribute('disabled');
-  //console.log(e);
- }
-        </script>
+<script>
+  // How this code snippet works:
+    // This logic overwrites the default behavior of `grecaptcha.ready()` to
+    // ensure that it can be safely called at any time. When `grecaptcha.ready()`
+    // is called before reCAPTCHA is loaded, the callback function that is passed
+    // by `grecaptcha.ready()` is enqueued for execution after reCAPTCHA is
+    // loaded.
+    if (typeof grecaptcha === 'undefined') {
+      grecaptcha = {};
+    }
+    grecaptcha.ready = function (cb) {
+      if (typeof grecaptcha === 'undefined') {
+        // window.__grecaptcha_cfg is a global variable that stores reCAPTCHA's
+        // configuration. By default, any functions listed in its 'fns' property
+        // are automatically executed when reCAPTCHA loads.
+        const c = '___grecaptcha_cfg';
+        window[c] = window[c] || {};
+        (window[c]['fns'] = window[c]['fns'] || []).push(cb);
+      } else {
+        cb();
+      }
+    }
+
+    // Usage
+    grecaptcha.ready(function () {
+      grecaptcha.render('verify', {
+        'sitekey': `6Le2d1gjAAAAABe_WXGJ230vOKDt80Wvxm0i-0z6`
+      });
+    });
+</script>
   <title>Don Prasetiyo</title>
 </head>
 
