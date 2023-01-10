@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+require('dotenv').config()
 
-module.exports = nextConfig
+const nextConfig = {
+  reactStrictMode: false,
+  swcMinify: true,
+  env: {
+    CAPTCHA: process.env.CAPTCHA
+  }
+    }
+
+module.exports = nextConfig;
