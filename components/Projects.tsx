@@ -43,9 +43,9 @@ const Projects = () => {
             </div>
             <div className="mb-[20px] w-[100%]">
                 <Project title="Kompiwin (2014-2020)" image={kompiwin} alt={'kompiwin'} category='personal' details={<KompiwinDetails />} url={'https://kompiwin.com'} github={null} />
-                <Project title="MonkeyManifesto" image={mm} alt={'mm'} category='personal' details={<MMDetails />} url={'https://monkeymanifesto.com'} github={null} />
-                <Project title="Flappy Bird Clone in JavaScript" image={flappy} alt={'flappy'} category='personal' details={<FlappyDetails/>} url={'https://flappy.donprasetiyo.com/'} github={'https://github.com/donprasetiyo/Flappy'}/>
-                <Project title="DonPrasetiyo.com" image={meta} alt={'meta'} category='meta'details={<MetaDetails/>} url={'/'} github={'https://github.com/donprasetiyo/donprasetiyo'} />
+                <Project title="MonkeyManifesto (2019-now)" image={mm} alt={'mm'} category='personal' details={<MMDetails />} url={'https://monkeymanifesto.com'} github={null} />
+                <Project title="Flappy Bird Clone in JavaScript (2022-now)" image={flappy} alt={'flappy'} category='personal' details={<FlappyDetails/>} url={'https://flappy.donprasetiyo.com/'} github={'https://github.com/donprasetiyo/Flappy'}/>
+                <Project title="DonPrasetiyo.com (2022-now)" image={meta} alt={'meta'} category='meta'details={<MetaDetails/>} url={'/'} github={'https://github.com/donprasetiyo/donprasetiyo'} />
             </div>
         </>
     );
