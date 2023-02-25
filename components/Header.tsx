@@ -78,8 +78,8 @@ const Header = () => {
     }
 
     return (
-        <header className="container" id="header">
-            <div className="sub-container outer" id="offset">
+        <header className="my-container" id="header">
+            <div className="sub-my-container outer" id="offset">
                 <div className='logo'>
                     <h1><Link href="/">Don Prasetiyo</Link></h1>
                 </div>

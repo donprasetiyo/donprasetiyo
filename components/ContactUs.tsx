@@ -45,7 +45,7 @@ export const ContactUs = () => {
 
   return (
     <>
-      <div className='social'>
+      <div className='social mt-[20px]'>
         <ul>
           <li>
             <a href="mailto:dprasetiyo6@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -70,10 +70,10 @@ export const ContactUs = () => {
           </li>
         </ul>
       </div>
-      <p className="another">
+      <p className="another m-[10px] text-center">
         Or use the contact form below (EmailJS):
       </p>
-      <form ref={form.current} onSubmit={sendEmail} method="POST" onChange={(e) => showCaptchaIfNotShown(e)}>
+      <form className='mx-auto' ref={form.current} onSubmit={sendEmail} method="POST" onChange={(e) => showCaptchaIfNotShown(e)}>
         <p id="form-status" style={{ display: formStatus.length > 0 ? "block" : "none" }}>{formStatus}</p>
         <label>Name</label>
         <input type="text" name="user_name" />

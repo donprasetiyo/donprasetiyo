@@ -7,6 +7,6 @@ const nextConfig = {
   env: {
     CAPTCHA: process.env.CAPTCHA
   }
-    }
+}
 
 module.exports = nextConfig;

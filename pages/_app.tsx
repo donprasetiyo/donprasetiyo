@@ -9,21 +9,6 @@ import Layout from '../components/Layout'
 export default function App({ Component, pageProps }: AppProps) {
 
   function loadCaptcha() {
-    // if (typeof grecaptcha === 'undefined') {
-    //   grecaptcha = {} as ReCaptchaV2.ReCaptcha & {enterprise: ReCaptchaV2.ReCaptcha};
-    // }
-    // grecaptcha.ready = function (cb) {
-    //   if (typeof grecaptcha === 'undefined') {
-    //     // window.__grecaptcha_cfg is a global variable that stores reCAPTCHA's
-    //     // configuration. By default, any functions listed in its 'fns' property
-    //     // are automatically executed when reCAPTCHA loads.
-    //     const c = '___grecaptcha_cfg';
-    //     window[c] = window[c] || {};
-    //     (window[c]['fns'] = window[c]['fns'] || []).push(cb);
-    //   } else {
-    //     cb();
-    //   }
-    // }
 
     // Usage
     grecaptcha.ready(function () {
@@ -42,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" data-crossorigin />
-        <title>Don ww</title>
+        <title>Don Prasetiyo</title>
       </Head>
       {/* scripts belows are always loaded inside Head */}
       <Script src='https://www.google.com/recaptcha/api.js' strategy='afterInteractive' onReady={() => { loadCaptcha }}></Script>

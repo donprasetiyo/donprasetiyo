@@ -20,11 +20,13 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
     const [chosenTheme, setChosenTheme] = useState('');
     let userSelectedTheme = "";
 
+    const [deviceTheme, setDeviceTheme] = useState('');
+
     function checkCookies() {
-        const selectedThemeCookie = document.cookie
+        let selectedThemeCookie = document.cookie
             .split('; ')
             .find((row) => row.startsWith('theme='))
-            ?.split('=')[1];
+            ?.split('=')[1] as string;
 
         if (selectedThemeCookie) {
             if (selectedThemeCookie === "dark") {
@@ -57,14 +59,20 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
                     input.checked = true;
                     changeThemeIcon("fa-laptop");
                 }
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    selectedThemeCookie = 'dark';
+                    setDeviceTheme('dark');
+                }
+                if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    selectedThemeCookie = 'light';
+                    setDeviceTheme('light');
+                }
             }
 
             if (selectedThemeCookie !== themeSettings.selectedTheme) {
-                //setChosenTheme(selectedThemeCookie)
 
                 setThemeSettings({ selectedTheme: selectedThemeCookie })
 
-                console.log('cookie checking...' + themeSettings.selectedTheme + ' - ' + selectedThemeCookie)
             }
 
         }
@@ -124,6 +132,7 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
         //console.log('cookies checking')
     }, [themeSettings.selectedTheme])
 
+
     function changeThemeIcon(faNew: string) {
         let icon = document.getElementById('main-theme-icon');
         if (icon) {
@@ -175,7 +184,7 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
 
             }
 
-        setThemeSettings({ selectedTheme: selectedTheme });
+            setThemeSettings({ selectedTheme: selectedTheme });
 
             document.cookie = `theme=${selectedTheme}; SameSite=None; Secure`;
 
@@ -206,8 +215,6 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
         }
 
     }
-
-    console.log('themeSettings.selectedTheme === ' + themeSettings.selectedTheme)
 
     return (
 

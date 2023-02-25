@@ -14,7 +14,6 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
 
   const {themeSettings} = useContext(Context);
-console.log('index === ' + themeSettings.selectedTheme);
   return (
     <div className={`App ${themeSettings.selectedTheme}`}>
       <Content />
