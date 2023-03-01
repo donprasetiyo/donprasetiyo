@@ -29,4 +29,5 @@ jobs:
         source: ".next"
         target: "/var/www/donprasetiyo.com/html/"
         overwrite: true
+        rm: true
         command_timeout: 1000m
