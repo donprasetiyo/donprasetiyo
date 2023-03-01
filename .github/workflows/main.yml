@@ -20,7 +20,7 @@ jobs:
       run: npm run build
 
     - name: Create zip file of build directory
-      run: zip -r build.zip . -i .next/
+      run: zip -r build.zip .next
 
     - name: Transfer build to Ubuntu Server
       uses: appleboy/scp-action@master
