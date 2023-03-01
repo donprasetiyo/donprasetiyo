@@ -32,6 +32,7 @@ jobs:
         source: "build.zip"
         target: "/var/www/donprasetiyo.com/html/"
         overwrite: true
+        command_timeout: 1000m
 
     - name: Unzip build file on Ubuntu Server
       uses: appleboy/ssh-action@master
