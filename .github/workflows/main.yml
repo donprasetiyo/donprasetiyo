@@ -41,6 +41,6 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        script: sudo unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
+        script: 
+          sudo unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
         command_timeout: 1000m
-        overwrite: true
