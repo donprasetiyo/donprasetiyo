@@ -39,6 +39,4 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        run: |
-          cd var/www/donprasetiyo.com/html
-          sudo unzip -o build.zip 
+        script: sudo unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
