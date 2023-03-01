@@ -44,4 +44,4 @@ jobs:
         script: |
           sudo rm -rf var/www/donprasetiyo.com/html/.next/
           sudo unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
-        command_timeout: 1000m
+        command_timeout: 30000m
