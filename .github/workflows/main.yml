@@ -30,3 +30,4 @@ jobs:
         target: "/var/www/donprasetiyo.com/html/"
         overwrite: true
         command_timeout: 1000m
+        rm: true
