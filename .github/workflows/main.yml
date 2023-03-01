@@ -41,7 +41,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        script: 
+        script: |
           sudo rm -rf var/www/donprasetiyo.com/html/.next/
           sudo unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
         command_timeout: 1000m
