@@ -81,7 +81,7 @@ const Header = () => {
         <header className="my-container" id="header">
             <div className="sub-my-container outer" id="offset">
                 <div className='logo'>
-                    <h1><Link href="/">Dony Prasetiyo</Link></h1>
+                    <h1><Link href="/">Don Prasetiyo</Link></h1>
                 </div>
                 <div className="nav-toggle">
                     <div className="nav">
