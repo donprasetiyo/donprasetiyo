@@ -20,7 +20,7 @@ jobs:
       run: npm run build
 
     - name: Change permission
-      run: sudo find ~ -type d -user root -exec sudo chown -R $USER: {} +
+      run: "sudo find ~ -type d -user root -exec sudo chown -R $USER: {} +"
 
     - name: Transfer build to Ubuntu Server
       uses: appleboy/scp-action@master
