@@ -27,7 +27,8 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         source: ".next"
-        target: "/var/www/donprasetiyo.com/html/"
+        target: "/var/www/donprasetiyo.com/html/.next"
         overwrite: true
         rm: true
+        strip_components: 1
         command_timeout: 1000m
