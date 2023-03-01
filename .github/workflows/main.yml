@@ -30,4 +30,3 @@ jobs:
         target: "/var/www/donprasetiyo.com/html/.next"
         overwrite: true
         strip_components: 1
-        command_timeout: 1000m
