@@ -30,6 +30,6 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         source: "build.zip"
-        target: "var/www/donprasetiyo.com/html/b/"
+        target: "/var/www/donprasetiyo.com/html/b/"
         debug: true
         overwrite: true
