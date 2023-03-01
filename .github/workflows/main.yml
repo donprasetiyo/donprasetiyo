@@ -43,3 +43,4 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         script: sudo unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
         command_timeout: 1000m
+        overwrite: true
