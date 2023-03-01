@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         source: ./build.zip
-        target: /path/to/destination/folder/
+        target: var/www/donprasetiyo.com/html
         
     - name: Unzip build file on Ubuntu Server
       uses: appleboy/ssh-action@master
@@ -40,5 +40,5 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         script: |
-          cd /path/to/destination/folder/
+          cd var/www/donprasetiyo.com/html
           unzip build.zip
