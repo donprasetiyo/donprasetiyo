@@ -19,9 +19,6 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Create zip file of build directory
-      run: zip -r build.zip .next
-
     - name: Transfer build to Ubuntu Server
       uses: appleboy/scp-action@master
       with:
@@ -29,17 +26,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        source: "build.zip"
+        source: ".next"
         target: "/var/www/donprasetiyo.com/html/"
         overwrite: true
         command_timeout: 1000m
-
-    - name: Unzip build file on Ubuntu Server
-      uses: appleboy/ssh-action@v0.1.8
-      with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: ${{ secrets.SERVER_USERNAME }}
-        key: ${{ secrets.SERVER_SSH_KEY }}
-        port: ${{ secrets.SERVER_PORT }}
-        script: |
-          unzip -o var/www/donprasetiyo.com/html/build.zip -d var/www/donprasetiyo.com/html/
