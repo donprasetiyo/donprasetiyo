@@ -27,7 +27,7 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         script: |
-          cd var/www/donprasetiyo.com/html/
+          cd var/www/donprasetiyo.com/html
           sudo git pull origin master
 
     - name: Transfer build to Ubuntu Server
@@ -51,7 +51,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        source: ".next"
+        source: "node_modules"
         target: "/var/www/donprasetiyo.com/html/node_modules"
         overwrite: true
         rm: true
