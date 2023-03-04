@@ -36,10 +36,9 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         source: "."
-        target: "/var/www/donprasetiyo.com/html/new"
+        target: "/var/www/donprasetiyo.com/html"
         overwrite: true
         rm: true
-        strip_components: 1
         command_timeout: 1000m
 
     # - name: Transfer build to Ubuntu Server
