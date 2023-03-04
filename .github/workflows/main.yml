@@ -28,7 +28,7 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         script: |
           cd var/www/donprasetiyo.com && sudo chmod -R 777 .
-          sudo rm -rf html
+          sudo rm -f html
           whoami
           
     - name: Transfer all files to Ubuntu Server
