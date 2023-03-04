@@ -28,9 +28,9 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         script: |
           cd var/www/donprasetiyo.com && sudo chmod -R 777 .
-          cd html && sudo chmod -R 777 .
-          sudo rm -rf .next
-
+          sudo rm -rf html
+          whoami
+          
     - name: Transfer all files to Ubuntu Server
       uses: appleboy/scp-action@master
       with:
