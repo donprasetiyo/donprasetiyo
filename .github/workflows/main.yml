@@ -26,10 +26,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        script: |
-          cd var/www/donprasetiyo.com/html
-          git config --get remote.origin.url
-          sudo git pull origin master
+        script: cd var/www/donprasetiyo.com/html && sudo git pull origin master
 
     - name: Transfer build to Ubuntu Server
       uses: appleboy/scp-action@master
