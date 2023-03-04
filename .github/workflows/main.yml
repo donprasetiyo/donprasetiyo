@@ -26,7 +26,10 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
-        script: cd var/www/donprasetiyo.com && sudo chmod -R 777 .
+        script: |
+          cd var/www/donprasetiyo.com && sudo chmod -R 777 .
+          cd html && sudo chmod -R 777 .
+          cd .next && sudo chmod -R 777 .
 
     - name: Transfer all files to Ubuntu Server
       uses: appleboy/scp-action@master
