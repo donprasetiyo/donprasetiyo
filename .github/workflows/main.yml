@@ -19,8 +19,8 @@ jobs:
     - name: Build project
       run: sudo npm run build
 
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v0.1.8
+    - name: Pulling
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USERNAME }}
