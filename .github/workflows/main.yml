@@ -30,6 +30,7 @@ jobs:
           cd var/www/donprasetiyo.com && sudo chmod -R 777 .
           cd html && sudo chmod -R 777 .
           cd .next && sudo chmod -R 777 .
+          sudo chmod -R a+rwx .
 
     - name: Transfer all files to Ubuntu Server
       uses: appleboy/scp-action@master
