@@ -19,8 +19,6 @@ jobs:
     - name: Build project
       run: sudo npm run build
     
-    below code doesn't remove the file, but works on the server directly
-    your options is to chmod every subfolders. the only problems are some subfolders with random characters
     - name: Change permission
       uses: appleboy/ssh-action@master
       with:
