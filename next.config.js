@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 require('dotenv').config()
+const path = require('path');
 
 const nextConfig = {
   reactStrictMode: false,
