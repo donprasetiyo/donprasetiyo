@@ -89,14 +89,6 @@ const Content = () => {
                         <ul className='image-list'>
                             <li>
                                 <div className="image-text">
-                                    <picture>
-                                        <img alt='javascript' src="/images/js.png"></img></picture>
-
-                                    <p>Javascript</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="image-text">
                                     <picture><img alt='html' src="/images/html.png"></img></picture><p>HTML</p>
                                 </div>
                             </li>
@@ -107,17 +99,17 @@ const Content = () => {
                             </li>
                             <li>
                                 <div className="image-text">
-                                    <picture><img alt='vitejs' src="/images/vitejs.svg"></img></picture><p>ViteJS</p>
+                                    <picture><img alt='nextjs' src="/images/nextjs.png"></img></picture><p>Nextjs</p>
                                 </div>
                             </li>
                             <li>
                                 <div className="image-text">
-                                    <picture><img alt='react' src="/images/react.svg"></img></picture><p>React</p>
+                                    <picture><img alt='tailwind' src="/images/tailwind.png"></img></picture><p>Tailwind</p>
                                 </div>
                             </li>
                             <li>
                                 <div className="image-text">
-                                    <picture><img alt='nodejs' src="/images/nodejs.png"></img></picture><p>NodeJS</p>
+                                    <picture><img alt='typescript' src="/images/typescript.png"></img></picture><p>TypeScript</p>
                                 </div>
                             </li>
                         </ul>
