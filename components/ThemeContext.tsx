@@ -70,9 +70,7 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
             }
 
             if (selectedThemeCookie !== themeSettings.selectedTheme) {
-
                 setThemeSettings({ selectedTheme: selectedThemeCookie })
-
             }
 
         }
@@ -106,19 +104,19 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
 
             onLoadActivities();
 
-            // function loadAfterTime() {
-            //     tooltipBox.style.opacity = 1;
-            // }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                selectedThemeCookie = 'dark';
+                setDeviceTheme('dark');
+            }
+            if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                selectedThemeCookie = 'light';
+                setDeviceTheme('light');
+            }
+
             if (selectedThemeCookie && selectedThemeCookie !== themeSettings.selectedTheme) {
-                // setChosenTheme(selectedThemeCookie)
-                //console.log('called')
-                //setThemeSettings({ selectedTheme: selectedThemeCookie })
                 setThemeSettings(prevThemeSettings => ({ ...prevThemeSettings, selectedTheme: selectedThemeCookie }));
-                //console.log('check' + themeSettings)
             }
             if (selectedThemeCookie === undefined) {
-                //setChosenTheme('');
-
                 setThemeSettings({ selectedTheme: '' })
             }
 
@@ -128,8 +126,7 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
     }
 
     useEffect(() => {
-        checkCookies();
-        //console.log('cookies checking')
+        checkCookies()
     }, [themeSettings.selectedTheme])
 
 
