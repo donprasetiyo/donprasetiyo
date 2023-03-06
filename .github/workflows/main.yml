@@ -43,19 +43,7 @@ jobs:
         rm: true
         command_timeout: 1000m
 
-    #pwd to check current directory opened in terminal
-    #process.json does not exit, wrong path
-    #also, the whole operation in this file might work 100% (except deleting .next folder).
-    #what causes the static folder to be 404 is the pm2 process that still running even after pm2 stop process.json
-    #and the only way to kill the process, is using sudo lsof -i :3000
-    #then, kill -9 <PID>
-    #finally, pm2 restart process.json solve the problem
-
-    #command to kill all process: sudo killall -9 node
-    #don't worry, when this issue occured, only one process happening with 3000 port. so it will be fine when you restart pm2
-    #but first, fix why process.json doesn't exist, and how to get to the right directory
-
-    - name: Restarting pm2
+    - name: Stopping pm2, killing all node process
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SERVER_HOST }}
@@ -77,31 +65,3 @@ jobs:
         script: |
           cd /
           pm2 restart process.json
-
-    # - name: Transfer build to Ubuntu Server
-    #   uses: appleboy/scp-action@master
-    #   with:
-    #     host: ${{ secrets.SERVER_HOST }}
-    #     username: ${{ secrets.SERVER_USERNAME }}
-    #     key: ${{ secrets.SERVER_SSH_KEY }}
-    #     port: ${{ secrets.SERVER_PORT }}
-    #     source: ".next"
-    #     target: "/var/www/donprasetiyo.com/html/.next"
-    #     overwrite: true
-    #     rm: true
-    #     strip_components: 1
-    #     command_timeout: 1000m
-
-    # - name: Transfer node modules to Ubuntu Server
-    #   uses: appleboy/scp-action@master
-    #   with:
-    #     host: ${{ secrets.SERVER_HOST }}
-    #     username: ${{ secrets.SERVER_USERNAME }}
-    #     key: ${{ secrets.SERVER_SSH_KEY }}
-    #     port: ${{ secrets.SERVER_PORT }}
-    #     source: "node_modules"
-    #     target: "/var/www/donprasetiyo.com/html/node_modules"
-    #     overwrite: true
-    #     rm: true
-    #     strip_components: 1
-    #     command_timeout: 1000m
