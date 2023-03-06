@@ -76,10 +76,28 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
         }
 
         else {
+
+            
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                selectedThemeCookie = 'dark';
+                setDeviceTheme('dark');
+            }
+            if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                selectedThemeCookie = 'light';
+                setDeviceTheme('light');
+            }
+
+            if (selectedThemeCookie && selectedThemeCookie !== themeSettings.selectedTheme) {
+                setThemeSettings(prevThemeSettings => ({ ...prevThemeSettings, selectedTheme: selectedThemeCookie }));
+            }
+            if (selectedThemeCookie === undefined) {
+                setThemeSettings({ selectedTheme: '' })
+            }
+
             let tooltipBox = document.createElement('div');
             let tooltipText = document.createElement('p');
 
-            tooltipText.innerText = "Try the dark mode.";
+            tooltipText.innerText = `Try the ${selectedThemeCookie === 'dark' ? 'light' : 'dark'} mode.`;
             tooltipBox.appendChild(tooltipText);
             let tooltipButton = document.createElement('button');
             tooltipButton.innerText = "Dismiss";
@@ -103,22 +121,6 @@ function ThemeContextProvider({ children }: ReactChildrenProps) {
             })
 
             onLoadActivities();
-
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                selectedThemeCookie = 'dark';
-                setDeviceTheme('dark');
-            }
-            if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-                selectedThemeCookie = 'light';
-                setDeviceTheme('light');
-            }
-
-            if (selectedThemeCookie && selectedThemeCookie !== themeSettings.selectedTheme) {
-                setThemeSettings(prevThemeSettings => ({ ...prevThemeSettings, selectedTheme: selectedThemeCookie }));
-            }
-            if (selectedThemeCookie === undefined) {
-                setThemeSettings({ selectedTheme: '' })
-            }
 
         }
 
