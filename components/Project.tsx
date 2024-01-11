@@ -4,8 +4,10 @@ import { useState } from "react";
 const Details = (props: any) => {
     return (
         <div className={`fixed top-0 bottom-0 left-0 right-0 z-[2] bg-[#cfe9eb] border-dotted border-2 border-[#555] rounded-[10px] text-[#555] p-[10px_15px] w-[960px] h-fit m-auto ${props.shown ? 'visible transition-all scale-100 opacity-100' : 'fixed invisible transition-all scale-75 opacity-0'} max-[1020px]:w-[90%] dark:bg-[#1f4648]`}>
-            <div className="flex flex-row justify-center items-center max-[840px]:flex-col max-[540px]:mt-[25px]">
-                <Image className="w-[400px] max-[840px]:w-[100%]" src={props.image} alt={props.alt}></Image>
+            <div className="flex flex-row justify-center items-start max-[840px]:flex-col max-[540px]:mt-[25px]">
+                {
+                    props.image ? <Image className="w-[400px] max-[840px]:w-[100%]" src={props.image} alt={props.alt}></Image> : null
+                }
                 <div>
                     <h2 className="text-[25px] m-[10px]">{props.title}</h2>
                     <h3 className="text-[18px] m-[10px]">Details:</h3>
@@ -43,7 +45,8 @@ const Project = (props: any) => {
         <>
             <div className="w-[200px] inline-block align-top bg-[#c3e4e5] text-[#555] cursor-pointer m-[20px] dark:bg-[#1f4648] dark:text-[#fafafa] text-center rounded-[10px] hover:bg-[#a4dada] transition-all duration-[0.5s] max-[540px]:w-[90%] hover:scale-110" onClick={() => openProject()}>
                 <div className='rounded-[10px_10px_0_0] relative'>
-                    <Image src={props.image} alt={props.alt} className='rounded-[10px_10px_0_0] w-[200px] max-[540px]:w-[100%]' />
+                    {props.image ? <Image src={props.image} alt={props.alt} className='rounded-[10px_10px_0_0] w-[200px] max-[540px]:w-[100%]' /> : null}
+                    
                     <span className="absolute bottom-0 z-[1] bg-[#2d7179] text-[#fafafa] text-[10px] p-[5px] left-0 rounded-[0_5px_0_0] uppercase">{props.category}</span>
                 </div>
                 <h3 className="p-[5px] max-[540px]:p-[10px]">{props.title}</h3>
