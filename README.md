@@ -1,4 +1,6 @@
-DonPrasetiyo.com is a portfolio site that shows all of my personal projects, certifications, and more. It's built with NextJS, Tailwind, in TypeScript.
+DonPrasetiyo.com is a portfolio site that shows all of my personal projects, certifications, and more. It's built with NextJS, Tailwind, in TypeScript. Now with pnpm.
+
+Keep in mind it is not completely in Tailwind yet. I don't have enough time to update this site.
 
 ### Features
 

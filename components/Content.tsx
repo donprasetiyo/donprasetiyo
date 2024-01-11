@@ -16,7 +16,7 @@ const Content = () => {
     }, [])
 
     function lottieAnimate() {
-        const steps = [1000, "Hi, I'm Don.", 1000, "I'm a front-end developer.", 1000, "...with experience in the backend."];
+        const steps = [250, "Hi, I'm Don.", 250, "I'm a front-end developer.", 250, "I'm back-end developer.", 250, "with a go-to stack of React.js/Next.js..", 250, "..Tailwind and TypeScript..", 250, "..who open to working with other technologies..", 250, "..or other programming languages.", 250, "I usually either dockerize my apps..", 250, "..or to serverless environment (Lambda)..", 250, "..with infra-as-code tool SST (sst.dev)", 250, "..or simply to PaaS like Vercel."];
         var x = document.getElementById('target')
         //THIS FUNCTION DOESN'T TRIGGER RE-RENDER. ONLY RUNS ONCE, AND TYPICAL.JS TAKES CARE OF THE LOOP
         type(x, ...steps, loop);
