@@ -1,3 +1,4 @@
+'use client'
 /* eslint-disable react/no-unescaped-entities */
 import { Player } from '@lottiefiles/react-lottie-player';
 import React, { useEffect, useState } from 'react';
@@ -89,22 +90,22 @@ const Content = () => {
                     <Projects />
                 </div>
             </div>
-            <div className="panel my-container">
-                <div className="sub-my-container up center single mt-[20px] mb-[20px]">
-                    <h2 id="certification">Certifications:</h2>
+            <div className=" dark:bg-[#1F4648] flex justify-center items-center ">
+                <div className="mt-[20px] mb-[20px] self-baseline flex-col w-[980px] items-center flex justify-between my-5">
+                    <h2 id="certification" className='dark:text-[#fafafa] font-light text-[50px] tracking-[-0.5px] m-0'>Certifications:</h2>
                     <div>
-                        <ul className='cert-list'>
-                            <li>
+                        <ul className='p-0 m-0 list-none'>
+                            <li className='dark:text-[#fafafa] list-none'>
                                 <div className="cert">
-                                    <a href="https://scrimba.com/certificate/uMw6vMT9/gjavascript" target="_blank"
+                                    <a className='dark:text-[#fafafa] no-underline text-left' href="https://scrimba.com/certificate/uMw6vMT9/gjavascript" target="_blank"
                                         rel="noopener noreferrer">
-                                        <div className="certification">
-                                            <div className="cert-left">
-                                                <picture><img alt='scrimba' src="/images/scrimba-js-deep-dive.jpg"></img></picture>
+                                        <div className="certification dark:bg-[#1B3E41] dark:hover:bg-[#2d7179] flex flex-row items-center relative transition-[1s] p-2.5 rounded-[20px]">
+                                            <div className="">
+                                                <picture><img className='border-[1px] dark:border-[#fafafa] border-dashed h-auto max-h-[300px] rounded-[20px]' alt='scrimba' src="/images/scrimba-js-deep-dive.jpg"></img></picture>
                                             </div>
-                                            <div className="cert-right">
-                                                <h3>Javascript Deep Dive (Scrimba)</h3>
-                                                <p>
+                                            <div className="">
+                                                <h3 className='dark:text-[#fafafa] text-[35px] font-extralight m-0 px-2.5 py-0'>Javascript Deep Dive (Scrimba)</h3>
+                                                <p className='font-normal text-[26px] px-2.5 py-0 m-0'>
                                                     Instructor: Reed Barger
                                                 </p>
                                             </div>

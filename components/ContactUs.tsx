@@ -1,6 +1,9 @@
+'use client'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
+import { SocialIcons } from '../constants/SocialIcons';
+import SocialIcon from './SocialIcon';
 
 export const ContactUs = () => {
   const form = useRef();
@@ -45,46 +48,28 @@ export const ContactUs = () => {
 
   return (
     <>
-      <div className='social mt-[20px]'>
-        <ul>
-          <li>
-            <a href="mailto:dprasetiyo6@gmail.com" target="_blank" rel="noopener noreferrer">
-              <i className="fa-solid fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/donprasetiyo/" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/donprasetiyo/" target="_blank" rel="noopener noreferrer">
-
-              <i className="fa-brands fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/donprasetiyo" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-          </li>
+      <div className='social self-baseline rounded-[10px]'>
+        <ul className='m-0 p-0'>
+          {SocialIcons.map((item, index) => (
+            <SocialIcon iconClass={item.iconClass} href={item.href} key={index} />
+          ))}
         </ul>
       </div>
-      <p className="another m-[10px] text-center">
+      <p className="m-[10px] text-center">
         Or use the contact form below (EmailJS):
       </p>
-      <form className='mx-auto' ref={form.current} onSubmit={sendEmail} method="POST" onChange={(e) => showCaptchaIfNotShown(e)}>
-        <p id="form-status" style={{ display: formStatus.length > 0 ? "block" : "none" }}>{formStatus}</p>
+      <form className='mx-auto w-[400px] flex flex-col p-5 rounded-[15px]' ref={form.current} onSubmit={sendEmail} method="POST" onChange={(e) => showCaptchaIfNotShown(e)}>
+        <p id="form-status" className='text-base mb-5 m-0 p-2.5 border-l-[5px] border-l-[#1b3e41] border-solid bg-[#265559]' style={{ display: formStatus.length > 0 ? "block" : "none" }}>{formStatus}</p>
         <label>Name</label>
-        <input type="text" name="user_name" />
+        <input className='mt-2.5 p-2.5 rounded-[10px] border-0  mb-[20px] dark:bg-[#1b3e41]' type="text" name="user_name" />
         <label>Email</label>
-        <input type="email" name="user_email" />
+        <input className='mt-2.5 p-2.5 rounded-[10px] border-0 mb-[20px] dark:bg-[#1b3e41]' type="email" name="user_email" />
         <label>Message</label>
-        <textarea name="message" />
+        <textarea name="message" className='mt-2.5 p-2.5 rounded-[10px] border-0 mb-[20px] dark:bg-[#1b3e41]' />
         {/* {grecaptcha ? <p>not loaded</p> : null} */}
         <div id="verify" className="g-recaptcha" data-sitekey={process.env.CAPTCHA}></div>
         <br />
-        <input id="email-submit" type="submit" value="Send" style={{ cursor: 'pointer' }} />
+        <input className='mt-2.5 p-2.5 rounded-[10px] border-0 mb-[20px] dark:bg-[#1b3e41]' id="email-submit" type="submit" value="Send" style={{ cursor: 'pointer' }} />
       </form>
     </>
 
