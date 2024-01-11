@@ -48,7 +48,7 @@ const Project = (props: any) => {
                 </div>
                 <h3 className="p-[5px] max-[540px]:p-[10px]">{props.title}</h3>
             </div>
-            <Details shown={openDetail} title={props.title} onClose={() => setOpenDetail(false)} image={props.image} alt={props.alt} details={props.details} github={props.github} url={props.url}/>
+            <Details shown={openDetail} title={props.title} onClose={() => setOpenDetail(false)} image={props.image} alt={props.alt} details={<props.details/>} github={props.github} url={props.url}/>
         </>
     );
 }

@@ -78,14 +78,14 @@ const Header = () => {
     }
 
     return (
-        <header className="my-container" id="header">
-            <div className="sub-my-container outer" id="offset">
-                <div className='logo'>
-                    <h1><Link href="/">Don Prasetiyo</Link></h1>
+        <header id='header' className="flex flex-col items-center justify-center z-[1] relative">
+            <div className="flex flex-row justify-between lg:w-[1280px]" id="offset">
+                <div className='self-center'>
+                    <h1 className="m-0 font-light lg:text-[30px]"><Link href="/">Don Prasetiyo</Link></h1>
                 </div>
-                <div className="nav-toggle">
+                <div className="flex flex-row items-center">
                     <div className="nav">
-                        <input type="checkbox" id="drop" />
+                        <input className="hidden" type="checkbox" id="drop" />
                         <div className="nav-btn">
                             <label htmlFor="drop">
                                 <i className="fa-solid fa-bars"></i>
@@ -99,7 +99,7 @@ const Header = () => {
                                 <li><a href="#certification">Certifications</a></li>
                                 <li>
                                     <input type="checkbox" id="drop-2" />
-                                    <a href="#">Apps
+                                    <a href="#">Others
                                         <i className="fa-solid fa-caret-down"></i>
                                     </a>
                                     <label htmlFor="drop-2">
@@ -115,8 +115,8 @@ const Header = () => {
 
                     </div>
 
-                    <div className="theme-options" >
-                        <div id="toggle-theme" onClick={() => openMenu()} > <i id="main-theme-icon" className="fa-solid fa-palette"></i>
+                    <div className="theme-options relative mr-4 px-1" >
+                        <div id="toggle-theme" className="rounded-[10px] border-[1px] border-solid border-[#1b3e41]" onClick={() => openMenu()} > <i id="main-theme-icon" className="fa-solid fa-palette mr-[10px]"></i>
                             <i className="fa-solid fa-caret-down"></i>
                         </div>
                         <ul className={`list ${isOpened ? 'opened' : 'closed'}`} onChange={(event) => themeChangeTriggered(event)}>
