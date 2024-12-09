@@ -111,7 +111,7 @@ function Index() {
                         ]}
                     />
                     <TextOnlyFeature
-                        title='CV. Growing Publishing (2018)'
+                        title='CV. BERLIAN BAGI BANGSA (2018)'
                         subtitle='Web Developer'
                         description='Specialized in building and maintaining WordPress-based websites. Implemented landing pages, e-commerce functionality, and integrated Midtrans as the payment gateway to facilitate online transactions for Indonesian users.'
                         list={[
