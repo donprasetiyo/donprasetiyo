@@ -33,7 +33,7 @@ export const Route = createRootRoute({
                         <p>Built by <a href={'https://x.com/donprasetiyo'} target="_blank">@donprasetiyo</a>.</p>
                     </footer>
                 </div>
-                <TanStackRouterDevtools />
+               {import.meta.env.DEV && <TanStackRouterDevtools />}
             </>
         )
     },
